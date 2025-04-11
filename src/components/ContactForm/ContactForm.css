@@ -1,0 +1,20 @@
+
+.flex-1 {
+    height: fit-content;
+}
+h2 {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+}
+button.envoyer {
+    background-color: #fbad18;
+    font-weight: 500;
+    border-radius: 9999px; 
+    width: auto; 
+    white-space: nowrap; 
+    text-align: center; 
+}
+button.envoyer:hover {
+    background-color: #b98317;
+}

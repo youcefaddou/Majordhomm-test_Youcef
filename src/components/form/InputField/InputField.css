@@ -1,0 +1,23 @@
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.input-group-name {
+    display: flex;
+}
+.input-field {
+    border-radius: 20px;
+    margin: 0;
+    border-style: none;
+    width: 100%;
+
+}
+.input-group-mail-phone {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form {
+    color: white;
+}
