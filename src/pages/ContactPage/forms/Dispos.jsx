@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import FormSection from "../../../components/form/FormSection/FormSection";
 
-const Dispos = () => {
-    const [availabilities, setAvailabilities] = useState([]);
+const Dispos = ({ availabilities, setAvailabilities }) => {
     const [currentAvailability, setCurrentAvailability] = useState({
         day: "Lundi",
         hour: "7",
@@ -18,7 +17,11 @@ const Dispos = () => {
     };
 
     const handleAddAvailability = () => {
-        setAvailabilities((prev) => [...prev, currentAvailability]);
+        setAvailabilities((prev) => {
+            const updatedAvailabilities = [...prev, currentAvailability];
+            console.log("Updated Availabilities:", updatedAvailabilities);
+            return updatedAvailabilities;
+        });
         setCurrentAvailability({ day: "Lundi", hour: "7", minutes: "00" });
     };
 
@@ -79,7 +82,6 @@ const Dispos = () => {
                 </button>
             </div>
 
-            {/* Liste des disponibilités */}
             <div className="mt-6 flex flex-col gap-2">
                 {availabilities.map((availability, index) => (
                     <div

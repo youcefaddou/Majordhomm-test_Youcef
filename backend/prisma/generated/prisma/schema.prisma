@@ -1,0 +1,60 @@
+model Coordinate {
+  id        Int       @id @default(autoincrement())
+  gender    String
+  lastName  String
+  firstName String
+  email     String
+  phone     String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  meetings  Meeting[]
+}
+
+model Disponibility {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  meetings Meeting[] @relation("MeetingDisponibilities")
+}
+
+model Meeting {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  coordinateId Int
+  coordinate   Coordinate @relation(fields: [coordinateId], references: [id])
+
+  messageId Int
+  message   Message @relation(fields: [messageId], references: [id])
+
+  disponibilities Disponibility[] @relation("MeetingDisponibilities")
+}
+
+model Message {
+  id        Int       @id @default(autoincrement())
+  content   String
+  subject   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  meetings  Meeting[]
+}
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma"
+  previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}

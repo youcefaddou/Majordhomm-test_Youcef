@@ -1,0 +1,13 @@
+model Meeting {
+  id              Int           @id @default(autoincrement())
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  coordinateId    Int
+  coordinate      Coordinate    @relation(fields: [coordinateId], references: [id])
+
+  messageId       Int
+  message         Message       @relation(fields: [messageId], references: [id])
+
+  disponibilities Disponibility[] @relation("MeetingDisponibilities")
+}
