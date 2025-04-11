@@ -18,6 +18,8 @@ const Coordinates = () => {
                     name="Nom"
                     className="rounded-full p-3 border border-gray-300 bg-white w-full placeholder-gray-500 text-black"
                     placeholder="Nom"
+                    patternError={/^[a-zA-ZÀ-ÿ]+$/}
+                    errorMessage="Le nom ne doit contenir que des lettres"
                 />
                 <InputField
                     type="text"
