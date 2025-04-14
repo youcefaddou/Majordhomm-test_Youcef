@@ -19,7 +19,6 @@ const Dispos = ({ availabilities, setAvailabilities }) => {
     const handleAddAvailability = () => {
         setAvailabilities((prev) => {
             const updatedAvailabilities = [...prev, currentAvailability];
-            console.log("Updated Availabilities:", updatedAvailabilities);
             return updatedAvailabilities;
         });
         setCurrentAvailability({ day: "Lundi", hour: "7", minutes: "00" });
@@ -49,7 +48,7 @@ const Dispos = ({ availabilities, setAvailabilities }) => {
                 </select>
 
                 <select
-                    className="rounded-full p-3 border border-gray-300 bg-white  text-gray-500"
+                    className="rounded-full p-3 border border-gray-300 bg-white text-gray-500"
                     name="hour"
                     value={currentAvailability.hour}
                     onChange={handleInputChange}

@@ -37,10 +37,7 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm()) {
-            console.error("Form is invalid. Please check the inputs.");
-            return;
-        }
+        
 
         const formData = {
             coordinates,
@@ -48,7 +45,6 @@ export default function ContactForm() {
             message,
         };
 
-        console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Log détaillé
 
         try {
             const response = await fetch("http://localhost:3001/contact", { 
@@ -59,11 +55,7 @@ export default function ContactForm() {
                 body: JSON.stringify(formData),
             });
 
-            if (response.ok) {
-                console.log("Form submitted successfully.");
-            } else {
-                console.log("Error submitting form:", response.statusText);
-            }
+            
         } catch (error) {
             console.error("Erreur:", error);
         }
