@@ -1,6 +1,6 @@
 ## Auteur
 
-C'était laborieux mais j'ai pu le faire ^^ je suis fier de moi sachant que je ne maitrisais pas encore REACT et que j'ai du m'adapter a vitesse grand V !! j'ai eu un soucis d'envoi de formulaire à la fin mais j'ai pu le régler et tout envoyer a temps! Bon weekend ^^ 
+Tout est OK et fonctionne entre le front et le back, je suis content d'avoir pu effectuer ce projet qui m'a permis d'apprendre les bonnes pratiques en React ainsi que la gestion de DB et son lien avec les données envoyées en front.
 
 ## Structure du projet
 
